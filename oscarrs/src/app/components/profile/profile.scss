@@ -1,0 +1,127 @@
+$backgroundColor_1: rgba(46, 13, 36, 0.9);
+$backgroundColor_2: rgba(27, 8, 21, 0.438);
+
+
+body{
+    margin: 0;
+}
+
+.profile_page{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+
+    video{
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .profile_header_box {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .profile_header{
+        padding: 20px;
+        width: 900px;
+
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+
+        background: 
+            radial-gradient(
+            farthest-side at top right,
+            rgba(255, 0, 150, 0.5),
+            transparent 500px
+            ),
+
+            radial-gradient(
+            farthest-corner at top left,
+            rgba(221, 50, 255, 0.4),
+            transparent 600px
+            ),
+
+            $backgroundColor_1;
+        
+        color: white;
+        font-family: "Fira Sans", sans-serif;
+
+        .profile_picture{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            grid-column: span 1;
+
+            .profile_avatar{
+                display: block;
+                position: absolute;
+                inset: 16px;
+
+                img{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .profile_border{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                inset: 0;
+                z-index: 1;
+                pointer-events: none;
+                
+                picture, img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                img {
+                    object-fit: contain;
+                }
+            }
+        }
+
+        .profile_person{
+            grid-column: span 3;
+            padding-left: 32px;
+            padding-right: 20px;
+        }
+
+        .profile_data{
+            grid-column: span 2;
+
+            .data{
+                background-color: $backgroundColor_2;
+                padding: 10px;
+                border-radius: 5px;
+
+                p{
+                    display: flex;
+                    justify-content: center;
+                    margin: 0 auto;
+                }
+            }
+
+            h3{
+              font-weight: normal;  
+            }
+
+            img{
+                max-width: 30px;
+                margin: 4px;
+            }
+
+
+        }
+    }
+}

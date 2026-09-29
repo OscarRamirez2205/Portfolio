@@ -27,6 +27,26 @@ body{
         justify-content: center;
     }
 
+    .body_box {
+        width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 20px;
+        background: $backgroundColor_1;
+
+        .main_data {
+            grid-column: span 4;
+            min-width: 0;
+        }
+
+        .assider {
+            grid-column: span 2;
+            min-width: 0;
+        }
+    }
+
     .profile_header{
         padding: 20px;
         width: 900px;
@@ -103,7 +123,7 @@ body{
             .data{
                 background-color: $backgroundColor_2;
                 padding: 10px;
-                border-radius: 5px;
+                border-radius: 2px;
 
                 p{
                     display: flex;
@@ -123,5 +143,9 @@ body{
 
 
         }
+
     }
+    
+
+    
 }

@@ -1,0 +1,145 @@
+$backgroundColor_1: rgba(46, 13, 36, 0.9);
+$backgroundColor_2: rgba(27, 8, 21, 0.438);
+
+.data_box {
+    font-family: "Motiva Sans", Arial, Helvetica, sans-serif;
+    width: 100%;
+
+    .data_box_2 {
+        width: 100%;
+    }
+
+    .data {
+        box-sizing: border-box;
+        width: 100%;            
+
+        .studis {
+
+            .top{
+                background-color:rgba(20, 60, 68, 0.93);
+                color: white;
+                border-radius: 2px;
+                
+                h3{
+                    padding: 10px 5px;
+                    font-weight: normal;
+                    font-size: x-large;
+                    margin: 0px;
+                }
+            }
+
+            .bottom{
+                background-color: $backgroundColor_1;
+                color: lightgray;
+                padding: 10px;
+                .backgrounds{
+                    background-color: $backgroundColor_2;
+                    padding: 10px 5px;
+                    margin: 20px 10px;
+                    margin-top: 0px;
+                }
+
+                .study-item {
+                    position: relative;
+                    cursor: default;
+                    outline: none;
+
+                    &:hover,
+                    &:focus-visible {
+                        background-color: rgba(52, 97, 109, 0.45);
+                        color: white;
+
+                        .study-modal {
+                            opacity: 1;
+                            visibility: visible;
+                            transform: translateY(0);
+                        }
+                    }
+                }
+
+                .study-modal {
+                    position: absolute;
+                    z-index: 10;
+                    top: calc(100% + 8px);
+                    left: 0;
+                    width: min(390px, calc(100vw - 60px));
+                    color: #1f1f1f;
+                    background: #ffffff;
+                    border: 1px solid #dedede;
+                    border-radius: 3px;
+                    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(-5px);
+                    transition: opacity 140ms ease, transform 140ms ease, visibility 140ms;
+                    pointer-events: none;
+                }
+
+                .window-titlebar {
+                    min-height: 34px;
+                    padding: 0 7px 0 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    color: #222;
+                    background: #ffffff;
+                    border-bottom: 1px solid #ededed;
+                    font-family: "Segoe UI", Arial, sans-serif;
+                    font-size: 12px;
+                    font-weight: 400;
+                }
+
+                .window-controls {
+                    display: flex;
+                    align-self: stretch;
+                    margin-left: auto;
+
+                    i {
+                        width: 32px;
+                        display: grid;
+                        place-items: center;
+                        border: 0;
+                        background: transparent;
+                        color: #333;
+                        font-style: normal;
+                        font-size: 15px;
+                        font-weight: normal;
+
+                        &:first-child::after { content: "−"; }
+                        &:nth-child(2)::after { content: "□"; font-size: 12px; }
+                        &:last-child:hover { background: #c42b1c; }
+                    }
+                }
+
+                .window-content {
+                    padding: 20px;
+                    display: flex;
+                    gap: 13px;
+                    align-items: flex-start;
+
+
+                    h4 {
+                        margin: 0 0 8px;
+                        color: #202020;
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+
+                    p {
+                        color: #4a4a4a;
+                        font-family: "Segoe UI", Arial, sans-serif;
+                        font-size: 14px;
+                        line-height: 1.45;
+                    }
+                }
+                
+                p{
+                    margin: 0px;
+                }
+            }
+        }
+
+    }
+
+
+}

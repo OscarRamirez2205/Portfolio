@@ -1,0 +1,59 @@
+$backgroundColor_1: rgba(46, 13, 36, 0.9);
+$backgroundColor_2: rgba(27, 8, 21, 0.438);
+
+.data_box {
+    width: 100%;
+    font-family: "Motiva Sans", Arial, Helvetica, sans-serif;
+
+    .data_box_2,
+    .data {
+        width: 100%;
+    }
+
+    .data {
+        box-sizing: border-box;
+    }
+
+    .languages {
+        .top {
+            color: white;
+            background-color: rgba(20, 60, 68, 0.93);
+            border-radius: 2px;
+
+            h3 {
+                margin: 0;
+                padding: 10px 10px;
+                font-size: x-large;
+                font-weight: normal;
+            }
+        }
+
+        .bottom {
+            padding: 10px;
+            color: lightgray;
+            background-color: $backgroundColor_1;
+
+            .backgrounds {
+                margin: 0 10px 20px;
+                padding: 10px 5px;
+                background-color: $backgroundColor_2;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .language-item p {
+                display: flex;
+                justify-content: space-between;
+                gap: 16px;
+                margin: 0;
+            }
+
+            .language-item span {
+                color: #b6d8de;
+                text-align: right;
+            }
+        }
+    }
+}

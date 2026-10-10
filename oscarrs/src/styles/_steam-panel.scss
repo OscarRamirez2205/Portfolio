@@ -1,0 +1,30 @@
+// Estilos compartidos para los paneles tipo "showcase" del perfil de Steam
+$panel-bg: rgba(46, 13, 36, 0.9);
+$panel-item-bg: rgba(27, 8, 21, 0.438);
+$panel-header-bg: rgba(20, 60, 68, 0.93);
+$panel-accent: #b6d8de;
+$panel-hover: rgba(52, 97, 109, 0.45);
+
+@mixin panel {
+    width: 100%;
+    font-family: "Motiva Sans", "Fira Sans", Arial, Helvetica, sans-serif;
+
+    .top {
+        color: white;
+        background-color: $panel-header-bg;
+        border-radius: 2px;
+
+        h3 {
+            margin: 0;
+            padding: 10px;
+            font-size: x-large;
+            font-weight: normal;
+        }
+    }
+
+    .bottom {
+        padding: 10px;
+        color: lightgray;
+        background-color: $panel-bg;
+    }
+}

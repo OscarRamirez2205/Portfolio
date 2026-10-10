@@ -1,0 +1,36 @@
+.cv {
+    font-family: "Motiva Sans", "Fira Sans", Arial, sans-serif;
+
+    h3 {
+        margin: 0;
+        color: white;
+        font-size: 18px;
+        font-weight: 300;
+    }
+}
+
+.cv_sub {
+    margin: 2px 0 10px;
+    color: #8f98a0;
+    font-size: 12px;
+}
+
+// Botón estilo "Install / Play" de Steam
+.cv_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    background: linear-gradient(90deg, #06bfff, #2d73ff);
+    border-radius: 2px;
+    transition: filter 140ms ease;
+
+    &:hover,
+    &:focus-visible {
+        filter: brightness(1.15);
+    }
+}

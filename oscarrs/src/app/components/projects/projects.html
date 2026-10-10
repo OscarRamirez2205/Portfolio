@@ -1,0 +1,63 @@
+<section class="projects" aria-labelledby="projects-title">
+    <div class="top">
+        <h3 id="projects-title">Personal Projects</h3>
+    </div>
+
+    <div class="bottom">
+        @for (project of projects; track project.name) {
+            <article class="project">
+                <div class="project_capsule">
+                    <img [src]="project.image" [alt]="project.name + ' logo'">
+                </div>
+
+                <div class="project_info">
+                    <h4>{{ project.name }}</h4>
+                    <p class="project_subtitle">{{ project.subtitle }}</p>
+
+                    <div class="project_stats">
+                        @for (stat of project.stats; track stat.label) {
+                            @if (stat.value) {
+                                <div class="project_stat">
+                                    <strong>{{ stat.value }}</strong>
+                                    <span>{{ stat.label }}</span>
+                                </div>
+                            } @else {
+                                <div class="project_stat project_stat--text">
+                                    <strong>{{ stat.label }}</strong>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+
+                <p class="project_description">{{ project.description }}</p>
+
+                <ul class="project_tags" aria-label="Technologies">
+                    @for (tag of project.tags; track tag) {
+                        <li>{{ tag }}</li>
+                    }
+                </ul>
+
+                <div class="project_actions">
+                    @if (project.playRoute) {
+                        <a class="btn btn--play" [routerLink]="project.playRoute">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path fill="currentColor" d="M4 2.5v11l9-5.5z"/>
+                            </svg>
+                            Play
+                        </a>
+                    }
+                    @if (project.repoUrl) {
+                        <a class="btn" [href]="project.repoUrl" target="_blank" rel="noopener">View on GitHub</a>
+                    }
+                </div>
+
+                @if (project.playRoute) {
+                    <p class="project_controls">
+                        Controls: <kbd>Space</kbd> plunger · <kbd>F</kbd> left flipper · <kbd>J</kbd> right flipper
+                    </p>
+                }
+            </article>
+        }
+    </div>
+</section>

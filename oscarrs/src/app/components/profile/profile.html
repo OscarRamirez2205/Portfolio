@@ -1,76 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lekton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="profile_page">
+<div class="profile_page">
+    <!-- Fondo animado con fundido a negro en la parte de abajo (como en Steam) -->
+    <div class="profile_bg" aria-hidden="true">
         <video autoplay muted loop playsinline>
-        <source
-            src="https://shared.akamai.steamstatic.com/community_assets/images/items/3331000/b298ae11c3851e2f35f06af18dfae49de3a08e6a.webm"
-            type="video/webm"
-        >
+            <source
+                src="https://shared.akamai.steamstatic.com/community_assets/images/items/3331000/b298ae11c3851e2f35f06af18dfae49de3a08e6a.webm"
+                type="video/webm"
+            >
         </video>
-
-        <div class="profile_header_box">
-            <div class="profile_header">
-                <div class="profile_picture">
-
-                    <picture class="profile_border">
-                        <img srcset="https://shared.fastly.steamstatic.com/community_assets/images/items/1313140/32c1a25966e87769ec6bcca824223abf6a53d182.png">
-                    </picture>
-
-                    <picture class="profile_avatar">
-                        <img srcset="https://shared.fastly.steamstatic.com/community_assets/images/items/2302140/43f645cf0d8009297f379da3f2294a8febf234ef.gif">
-                    </picture>
-
-                </div>
-
-                <div class="profile_person">
-                    <h2>Oscar Ramirez Sanchez</h2>
-                    <p><img class="profile_flag" src="https://community.fastly.steamstatic.com/public/images/countryflags/es.gif"> Calpe, Comunidad Valenciana, Spain </p>
-                </div>
-
-                <div class="profile_data">
-                    <h3>Age: 22</h3>
-                    <div class="data">
-                        <p>Web Developer</p>
-                        <p>
-                            <img src="https://camo.githubusercontent.com/1418d7b890ceb718ef8495f14c240f6823b7ce14e31f82b8c7909f8d3e0c3708/68747470733a2f2f6c68352e676f6f676c6575736572636f6e74656e742e636f6d2f2d755245694e7758527630672f5547566d707734776b4f492f41414141414141414668412f6f704c497a6f57717637552f733238382f48544d4c355f53462e706e67" alt="">
-                            <img src="https://static.cdnlogo.com/logos/c/18/css.svg" alt="">
-                            <img src="https://iconape.com/wp-content/files/ez/353342/png/javascript-logo.png" alt="">
-                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/960px-Typescript_logo_2020.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20221110153201" alt="">
-                            <img src="https://www.freeiconspng.com/thumbs/sql-server-icon-png/sql-server-icon-png-29.png" alt="">
-                            <img src="https://cdn-icons-png.flaticon.com/256/919/919830.png" alt="">
-
-                        </p>
-                        <p> 
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Angular_gradient_logo.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original" alt="">
-                            <img src="https://static.cdnlogo.com/logos/l/23/laravel.svg" alt="">
-                        </p>
-                        <p>Game developer</p>
-                        <p>
-                            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Blender_logo_no_text.svg/3840px-Blender_logo_no_text.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="">
-                            <img src="https://images.seeklogo.com/logo-png/51/2/babylon-js-logo-png_seeklogo-515545.png" alt="">
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="body_box">
-            <div class="main_data">
-                <app-studis></app-studis>
-            </div>
-            <div class="assider">
-
-            </div>
-        </div>
     </div>
-</body>
-</html>
+
+    <div class="profile_header_box">
+        <header class="profile_header">
+            <div class="profile_picture">
+                <picture class="profile_border">
+                    <img src="https://shared.fastly.steamstatic.com/community_assets/images/items/1313140/32c1a25966e87769ec6bcca824223abf6a53d182.png" alt="">
+                </picture>
+
+                <picture class="profile_avatar">
+                    <img src="https://shared.fastly.steamstatic.com/community_assets/images/items/2302140/43f645cf0d8009297f379da3f2294a8febf234ef.gif" alt="Oscar Ramirez Sanchez avatar">
+                </picture>
+            </div>
+
+            <div class="profile_person">
+                <h1>Oscar Ramirez Sanchez</h1>
+                <p class="profile_location">
+                    <img class="profile_flag" src="https://community.fastly.steamstatic.com/public/images/countryflags/es.gif" alt="">
+                    Calpe, Comunidad Valenciana, Spain
+                </p>
+                <p class="profile_summary">
+                    Web Application Developer (DAW) with a passion for games. I build full-stack web apps
+                    with Angular and Laravel, and interactive 3D experiences with Babylon.js and Blender.
+                </p>
+            </div>
+
+            <div class="profile_data">
+                <h3>Age <span class="profile_level">22</span></h3>
+                <div class="data">
+                    <p>Web Developer</p>
+                    <p>
+                        <img src="https://camo.githubusercontent.com/1418d7b890ceb718ef8495f14c240f6823b7ce14e31f82b8c7909f8d3e0c3708/68747470733a2f2f6c68352e676f6f676c6575736572636f6e74656e742e636f6d2f2d755245694e7758527630672f5547566d707734776b4f492f41414141414141414668412f6f704c497a6f57717637552f733238382f48544d4c355f53462e706e67" alt="HTML5" title="HTML5">
+                        <img src="https://static.cdnlogo.com/logos/c/18/css.svg" alt="CSS3" title="CSS3">
+                        <img src="https://iconape.com/wp-content/files/ez/353342/png/javascript-logo.png" alt="JavaScript" title="JavaScript">
+                        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/960px-Typescript_logo_2020.svg.png" alt="TypeScript" title="TypeScript">
+                        <img src="https://www.freeiconspng.com/thumbs/sql-server-icon-png/sql-server-icon-png-29.png" alt="SQL" title="SQL">
+                        <img src="https://cdn-icons-png.flaticon.com/256/919/919830.png" alt="PHP" title="PHP">
+                    </p>
+                    <p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Angular_gradient_logo.png" alt="Angular" title="Angular">
+                        <img src="https://static.cdnlogo.com/logos/l/23/laravel.svg" alt="Laravel" title="Laravel">
+                    </p>
+                    <p>Game developer</p>
+                    <p>
+                        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Blender_logo_no_text.svg/3840px-Blender_logo_no_text.svg.png" alt="Blender" title="Blender">
+                        <img src="https://images.seeklogo.com/logo-png/51/2/babylon-js-logo-png_seeklogo-515545.png" alt="Babylon.js" title="Babylon.js">
+                    </p>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="body_box">
+        <main class="main_data">
+            <app-projects></app-projects>
+            <app-experience></app-experience>
+            <app-studis></app-studis>
+            <app-languages></app-languages>
+        </main>
+        <aside class="assider">
+            <app-status></app-status>
+            <app-contact></app-contact>
+            <app-cv></app-cv>
+            <app-licenses></app-licenses>
+        </aside>
+    </div>
+</div>

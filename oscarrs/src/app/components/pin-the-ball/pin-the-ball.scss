@@ -1,0 +1,273 @@
+$background-color1: #0d0221;
+$background-color2: #261447;
+$primary-color: #ff00fa;
+$secondary-color: #ffea1c;
+$text-color-1: #1bf9fb;
+$text-color-2: #15b2b4;
+
+:host {
+  position: fixed;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  background: $background-color1;
+  color: $text-color-1;
+  font-family: 'Orbitron', system-ui, sans-serif;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  outline: none;
+  touch-action: none;
+}
+
+kbd {
+  display: inline-block;
+  min-width: 2.2em;
+  padding: 0.1rem 0.4rem;
+  margin-right: 0.4rem;
+  border: 1px solid rgba($text-color-1, 0.4);
+  border-radius: 5px;
+  background: rgba($background-color1, 0.8);
+  color: $secondary-color;
+  font-family: inherit;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+// HUD (volver al portfolio y controles)
+.ptb-hud {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: min(380px, calc(100vw - 32px));
+}
+
+.ptb-hud-btn {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid rgba($text-color-1, 0.35);
+  border-radius: 9px;
+  background: rgba($background-color2, 0.85);
+  color: $text-color-1;
+  font-family: inherit;
+  font-size: 0.75rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 140ms ease, color 140ms ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: $primary-color;
+    color: $secondary-color;
+  }
+}
+
+.ptb-help {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba($text-color-1, 0.25);
+  border-radius: 12px;
+  background: rgba($background-color2, 0.85);
+  font-size: 0.72rem;
+  line-height: 1.6;
+
+  p {
+    margin: 0 0 0.35rem;
+  }
+}
+
+.ptb-help-best {
+  margin: 0.6rem 0 0 !important;
+  color: $text-color-2;
+
+  strong {
+    color: $secondary-color;
+  }
+}
+
+// Pantalla de carga
+.ptb-loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 35%, rgba($primary-color, 0.3), transparent 35%),
+    linear-gradient(135deg, #080312 0%, #16072f 52%, #06020d 100%);
+  transition: opacity 240ms ease;
+
+  &.ptb-loading-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.ptb-loading-card {
+  width: min(88vw, 340px);
+  padding: 2rem;
+  border: 1px solid rgba($text-color-1, 0.16);
+  border-radius: 22px;
+  background: rgba(8, 3, 18, 0.78);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+  text-align: center;
+}
+
+.ptb-loading-logo {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 20px rgba($secondary-color, 0.4));
+}
+
+.ptb-loading-title {
+  margin: 0;
+  color: $secondary-color;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ptb-loading-text {
+  margin: 0.45rem 0 1.4rem;
+  color: rgba($text-color-1, 0.78);
+  font-size: 0.9rem;
+}
+
+.ptb-loading-bar {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba($text-color-1, 0.14);
+
+  &::before {
+    content: '';
+    display: block;
+    width: 45%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, $primary-color, $secondary-color);
+    animation: ptb-loading-slide 1.1s ease-in-out infinite;
+  }
+}
+
+@keyframes ptb-loading-slide {
+  0% {
+    transform: translateX(-110%);
+  }
+
+  100% {
+    transform: translateX(230%);
+  }
+}
+
+// Modal de fin de partida / error
+.ptb-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.ptb-modal {
+  width: min(92vw, 420px);
+  padding: 1.2rem;
+  border: 1px solid rgba($secondary-color, 0.5);
+  border-radius: 12px;
+  background: rgba($background-color2, 0.95);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+
+  h2 {
+    margin: 0;
+    color: $secondary-color;
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0;
+    color: $text-color-2;
+    font-size: 0.8rem;
+  }
+
+  button {
+    min-height: 42px;
+    border: none;
+    border-radius: 9px;
+    background: linear-gradient(90deg, $primary-color, $secondary-color);
+    color: #0a0516;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+
+.ptb-modal-secondary {
+  min-height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba($text-color-1, 0.35);
+  border-radius: 9px;
+  color: $text-color-1;
+  font-size: 0.8rem;
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    border-color: $primary-color;
+  }
+}
+
+.game-over-stats {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.game-over-stats-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: 9px;
+  background: rgba($background-color1, 0.55);
+
+  dt {
+    color: $text-color-2;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0;
+    color: $secondary-color;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+}
+
+.game-over-best {
+  color: $text-color-1 !important;
+}
+
+.game-over-new-best {
+  color: $primary-color !important;
+  font-weight: 700;
+  text-align: center;
+}

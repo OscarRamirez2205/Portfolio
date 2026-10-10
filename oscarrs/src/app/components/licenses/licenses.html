@@ -1,0 +1,16 @@
+<section class="licenses" aria-labelledby="licenses-title">
+    <h3 id="licenses-title">Badges <span>{{ badges.length }}</span></h3>
+    <p class="licenses_sub">Licences &amp; certificates</p>
+
+    <ul class="badge_list">
+        @for (badge of badges; track badge.id) {
+            <li class="badge">
+                <img class="badge_icon" [src]="badge.image" alt="">
+                <span class="badge_text">
+                    <strong>{{ badge.title }}</strong>
+                    <small>{{ badge.detail }}</small>
+                </span>
+            </li>
+        }
+    </ul>
+</section>

@@ -1,0 +1,19 @@
+<div class="data_box">
+    <div class="data_box_2">
+        <div class="data">
+            <section class="languages" aria-labelledby="languages-title">
+                <div class="top">
+                    <h3 id="languages-title">Languages</h3>
+                </div>
+
+                <div class="bottom">
+                    @for (language of languages; track language.name) {
+                        <div class="backgrounds language-item">
+                            <p>{{ language.name }} <span>{{ language.level }}</span></p>
+                        </div>
+                    }
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

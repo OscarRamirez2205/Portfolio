@@ -1,0 +1,59 @@
+@use '../../../styles/steam-panel' as *;
+
+.status {
+    padding: 4px 0 14px;
+    font-family: "Motiva Sans", "Fira Sans", Arial, sans-serif;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    p {
+        margin: 0;
+    }
+}
+
+.status_online {
+    color: #57cbde;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.status_sub {
+    margin-top: 4px !important;
+    color: #8f98a0;
+    font-size: 13px;
+}
+
+.status_links {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.status_link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    color: #dfe3e6;
+    font-size: 14px;
+    text-decoration: none;
+    background: $panel-item-bg;
+    border-radius: 2px;
+    transition: background 140ms ease, color 140ms ease;
+
+    &:hover,
+    &:focus-visible {
+        color: white;
+        background: $panel-hover;
+    }
+
+    &--play {
+        color: #d2efa9;
+        background: linear-gradient(90deg, rgba(117, 182, 22, 0.55), rgba(83, 132, 13, 0.55));
+
+        &:hover,
+        &:focus-visible {
+            background: linear-gradient(90deg, rgba(117, 182, 22, 0.85), rgba(83, 132, 13, 0.85));
+        }
+    }
+}

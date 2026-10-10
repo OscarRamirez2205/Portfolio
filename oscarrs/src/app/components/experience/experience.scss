@@ -1,0 +1,101 @@
+@use '../../../styles/steam-panel' as *;
+
+.experience {
+    @include panel;
+
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+.job {
+    display: flex;
+    gap: 12px;
+    padding: 10px;
+    background-color: $panel-item-bg;
+    transition: background-color 140ms ease;
+
+    &:hover {
+        background-color: $panel-hover;
+    }
+}
+
+.job_icon {
+    flex: 0 0 64px;
+    height: 64px;
+    overflow: hidden;
+    background: white;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.job_info {
+    flex: 1;
+    min-width: 0;
+
+    p {
+        margin: 0;
+    }
+}
+
+.job_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+
+    h4 {
+        margin: 0;
+        color: white;
+        font-size: 17px;
+        font-weight: 500;
+
+        span {
+            color: $panel-accent;
+            font-weight: 400;
+        }
+    }
+}
+
+.job_record {
+    flex-shrink: 0;
+    color: #8f98a0;
+    font-size: 12px;
+    text-align: right;
+    line-height: 1.4;
+
+    span {
+        color: $panel-accent;
+    }
+}
+
+.job_location {
+    margin-top: 2px !important;
+    color: #8f98a0;
+    font-size: 13px;
+}
+
+.job_description {
+    margin-top: 8px !important;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+@media (max-width: 560px) {
+    .job_header {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .job_record {
+        text-align: left;
+    }
+}

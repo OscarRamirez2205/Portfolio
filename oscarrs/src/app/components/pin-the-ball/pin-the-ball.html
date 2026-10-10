@@ -1,0 +1,66 @@
+@if (gameLoadingVisible()) {
+  <div class="ptb-loading-screen" [class.ptb-loading-hidden]="gameLoadingHidden()" role="status" aria-live="polite">
+    <div class="ptb-loading-card">
+      <img class="ptb-loading-logo" src="/assets/ptb/img/LogoSmll_PTB.png" alt="PinTheBall">
+      <h1 class="ptb-loading-title">PinTheBall</h1>
+      <p class="ptb-loading-text">Loading PinTheBall...</p>
+      <div class="ptb-loading-bar" aria-hidden="true"></div>
+    </div>
+  </div>
+}
+
+<canvas #renderCanvas tabindex="0" aria-label="PinTheBall game"></canvas>
+
+<div class="ptb-hud">
+  <a class="ptb-hud-btn" routerLink="/">← Portfolio</a>
+  <button type="button" class="ptb-hud-btn" (click)="toggleHelp()" [attr.aria-expanded]="helpOpen()">
+    Controls
+  </button>
+
+  @if (helpOpen()) {
+    <div class="ptb-help">
+      <p><kbd>Space</kbd> Hold to pull the plunger, release to launch</p>
+      <p><kbd>F</kbd> Left flipper</p>
+      <p><kbd>J</kbd> Right flipper</p>
+      <p><kbd>Mouse</kbd> + <kbd>Arrows</kbd> Move the camera</p>
+      <p class="ptb-help-best">Best score: <strong>{{ bestScore() | number: '1.0-0' }}</strong></p>
+    </div>
+  }
+</div>
+
+@if (loadError()) {
+  <div class="ptb-modal-backdrop">
+    <div class="ptb-modal" role="alertdialog" aria-modal="true" aria-labelledby="load-error-title">
+      <h2 id="load-error-title">Something went wrong</h2>
+      <p>The game could not be loaded. Please try again.</p>
+      <button type="button" (click)="restart()">Retry</button>
+      <a class="ptb-modal-secondary" routerLink="/">Back to portfolio</a>
+    </div>
+  </div>
+}
+
+@if (gameOverModalOpen()) {
+  <div class="ptb-modal-backdrop">
+    <div class="ptb-modal" role="dialog" aria-modal="true" aria-labelledby="game-over-title">
+      <h2 id="game-over-title">Game over</h2>
+
+      <dl class="game-over-stats">
+        <div class="game-over-stats-row">
+          <dt>Score</dt>
+          <dd>{{ gameOverScore() | number: '1.0-0' }}</dd>
+        </div>
+        <div class="game-over-stats-row">
+          <dt>Best score</dt>
+          <dd class="game-over-best">{{ bestScore() | number: '1.0-0' }}</dd>
+        </div>
+      </dl>
+
+      @if (isNewBest()) {
+        <p class="game-over-new-best">New personal best!</p>
+      }
+
+      <button type="button" (click)="restart()">Play again</button>
+      <a class="ptb-modal-secondary" routerLink="/">Back to portfolio</a>
+    </div>
+  </div>
+}

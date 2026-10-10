@@ -1,0 +1,33 @@
+<section class="contact" aria-labelledby="contact-title">
+    <h3 id="contact-title">Contact</h3>
+    <p class="contact_sub">Send me a message or give me a call</p>
+
+    <ul class="contact_list">
+        <li>
+            <a class="contact_item" [href]="'mailto:' + email">
+                <span class="contact_icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5z"/>
+                    </svg>
+                </span>
+                <span class="contact_text">
+                    <strong>Email</strong>
+                    <small>{{ email }}</small>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a class="contact_item" [href]="'tel:' + phone">
+                <span class="contact_icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/>
+                    </svg>
+                </span>
+                <span class="contact_text">
+                    <strong>Phone</strong>
+                    <small>{{ phoneDisplay }}</small>
+                </span>
+            </a>
+        </li>
+    </ul>
+</section>

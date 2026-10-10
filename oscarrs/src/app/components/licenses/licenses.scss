@@ -1,0 +1,78 @@
+@use '../../../styles/steam-panel' as *;
+
+.licenses {
+    font-family: "Motiva Sans", "Fira Sans", Arial, sans-serif;
+    color: lightgray;
+
+    h3 {
+        margin: 0;
+        color: white;
+        font-size: 18px;
+        font-weight: 300;
+
+        span {
+            color: #8f98a0;
+        }
+    }
+}
+
+.licenses_sub {
+    margin: 2px 0 10px;
+    color: #8f98a0;
+    font-size: 12px;
+}
+
+.badge_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    background: $panel-item-bg;
+    transition: background 140ms ease;
+
+    &:hover {
+        background: $panel-hover;
+
+        .badge_icon {
+            transform: scale(1.06);
+        }
+    }
+}
+
+.badge_icon {
+    flex: 0 0 46px;
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    background: white;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+    transition: transform 140ms ease;
+}
+
+.badge_text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+
+    strong {
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    small {
+        color: #8f98a0;
+        font-size: 12px;
+    }
+}

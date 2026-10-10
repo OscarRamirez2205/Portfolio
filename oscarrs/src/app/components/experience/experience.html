@@ -1,0 +1,27 @@
+<section class="experience" aria-labelledby="experience-title">
+    <div class="top">
+        <h3 id="experience-title">Work Experience</h3>
+    </div>
+
+    <div class="bottom">
+        @for (job of jobs; track job.company) {
+            <article class="job">
+                <div class="job_icon">
+                    <img [src]="job.logo" [alt]="job.company + ' logo'">
+                </div>
+
+                <div class="job_info">
+                    <div class="job_header">
+                        <h4>{{ job.role }} <span>· {{ job.company }}</span></h4>
+                        <p class="job_record">
+                            {{ job.onRecord }}<br>
+                            <span>{{ job.period }}</span>
+                        </p>
+                    </div>
+                    <p class="job_location">{{ job.location }}</p>
+                    <p class="job_description">{{ job.description }}</p>
+                </div>
+            </article>
+        }
+    </div>
+</section>

@@ -20,6 +20,16 @@ interface Job {
 export class Experience {
   readonly jobs: Job[] = [
     {
+      initials: 'CS',
+      logo: 'assets/experience/carrascostudio.png',
+      role: 'Backend Developer (Internship)',
+      company: 'Carrasco Studio',
+      location: 'Altea, Alicante',
+      period: 'Mar 2026 – Jun 2026',
+      onRecord: '4 months on record',
+      description: 'Backend development in PHP with the Symfony framework.',
+    },
+    {
       initials: 'JY',
       logo: 'assets/experience/jysk.png',
       role: 'Store Assistant',
